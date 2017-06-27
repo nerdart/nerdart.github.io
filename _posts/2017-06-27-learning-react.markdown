@@ -48,8 +48,6 @@ Here's a rule that you need to know: you can not inject an if statement
 into a JSX expression.
 
 
-
-
 A key is a JSX attribute. The attribute's name is key. The attribute's value should be something unique, similar to an id attribute.
 
 If you don't use keys when you're supposed to, React might accidentally scramble your list-items into the wrong order.
