@@ -89,7 +89,7 @@ A render function is a property whose name is render, and whose value is a funct
 
 
 A render function must have a return statement. Usually, this return statement returns a JSX expression:
-
+{% highlight javascript %}
 var React=require('react');
 var ReactDOM=require('react-dom');
 
@@ -111,12 +111,14 @@ var Owl=React.createClass({
   }
 });
 ReactDOM.render(<Owl />, document.getElementById('app'));
+{% endhighlight %}
+
 
 RENDER
 
 A render function must have a returnstatement. However, that isn't all that it can have.
 A render function can also be a fine place to put simple calculations that need to happen right before a component renders.
-
+{% highlight javascript %}
 var React = require('react');
 var ReactDOM = require('react-dom');
 
@@ -132,13 +134,14 @@ var TonightsPlan=React.createClass({
 
 });
 ReactDOM.render(<TonightsPlan />, document.getElementById('app'));
+{% endhighlight %}
 
 A Component in a render function
      
 Component render component
  React's specific module system comes from Node.js. More on all of that later.
 ProfilePage
-
+{% highlight javascript %}
 var React = require('react');
 var ReactDOM = require('react-dom');
 var NavBar=require('./NavBar');
@@ -156,10 +159,10 @@ return (
 }
 });
 ReactDOM.render(<ProfilePage />, document.getElementById('app'));
-
+{% endhighlight %}
 
 navbar
-
+{% highlight javascript %}
 var React = require('react');
 
 var NavBar = React.createClass({
@@ -177,11 +180,11 @@ return <nav>{navLinks}</nav>;
 }
 });
 module.exports = NavBar;
-
+{% endhighlight %}
 
 component return s another component
 
-
+{% highlight javascript %}
 var OMG=React.createClass({
 render: function(){
 return <h1></h1>;
@@ -195,6 +198,7 @@ return <OMG />
 
 }
 });
+{% endhighlight %}
 Props
 Every component has something called props.
 
@@ -208,7 +212,7 @@ Here's how to make a component display passed-in information:
 2 - Include this.props.name-of-information in that component class's render function's return statement.
 
 
-
+{% highlight javascript %}
 Var React = require('react');
 var ReactDOM = require('react-dom');
 
@@ -223,12 +227,13 @@ ReactDOM.render(
 <Greeting firstName='Uma' />,
 document.getElementById('app')
 );
+{% endhighlight %}
  You may have noticed some loose usage of the words prop and props Unfortunately this is pretty inevitable.
 props is the name of the object that stores passed-in information.this.props refers to that storage object. At the same time, each piece of passed-in information is also called a prop. props could refer to two pieces of passed-in information, or it could refer to the object that stores those pieces of information. 
 
 The most common use of props is to pass information to a component, from a different component. 
 
-
+{% highlight javascript %}
 var React = require('react');
 
 var Welcome = React.createClass({
@@ -250,7 +255,8 @@ var Welcome = React.createClass({
 });
 
 module.exports = Welcome;
-
+{% endhighlight %}
+{% highlight javascript %}
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Welcome = require('./Welcome');
@@ -280,7 +286,8 @@ var Greeting = React.createClass({
 });
 
 module.exports = Greeting;
-
+{% endhighlight %}
+{% highlight javascript %}
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Greeting = require('./Greeting');
@@ -306,7 +313,7 @@ ReactDOM.render(
   document.getElementById('app')
 );
 
-
+{% endhighlight %}
 
 
 
